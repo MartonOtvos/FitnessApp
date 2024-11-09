@@ -9,6 +9,6 @@ export type IconButtonProps = {
 export function IconButton({icon, onClick} : IconButtonProps)
 {
     return <button className="IconButton" onClick={onClick}>
-        <img src={`/${icon}.svg`} alt="" />
+        <img src={`${icon}.svg`} alt="" />
     </button>
 }
