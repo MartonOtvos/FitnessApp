@@ -1,0 +1,73 @@
+
+
+.JournalListContainer{
+    height: 600px;
+    width: 300px;
+    margin-top: 20px;
+    border: 1px solid gray;
+    border-radius: 4px;
+    padding: 0;
+}
+
+.JournalListContainer .TableContainer{
+    padding: 0;
+    overflow: auto;
+    border-bottom: 1px solid gray;
+}
+
+.JournalListContainer .ListTable{
+    padding: 0;
+    margin: 0;
+    border-collapse: collapse;
+}
+
+.JournalListContainer .ListTable tr{
+    border-bottom: 1px solid gray;
+    margin: 0;
+    padding: 0;
+    height: 50px;
+    text-align: center;
+}
+
+.JournalListContainer .ListTable tr:hover{
+    background-color: gray;
+    cursor: pointer;
+}
+
+.JournalListContainer.ListTable tr:last-child{
+    border-bottom: 0;
+}
+
+.JournalListContainer .ListContainer button{
+    margin: 0 10px 10px 10px;
+}
+
+.JournalListContainer button{
+    margin: 0 10px 10px 10px;
+}
+
+.JournalListContainer .InputContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px; 
+    input{
+        border-radius: 6px;
+        display: block;
+        width: 100%;
+        height: 30px;
+        margin: 0;
+        margin-bottom: 10px;
+        padding: 0;
+        text-align: center;
+    }
+    button{
+        display: block;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+        height: 30px;
+        width: 100%;
+    }
+}
+
