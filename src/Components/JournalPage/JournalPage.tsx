@@ -30,14 +30,14 @@ export function JournalPage()
     let OnClear = () => {
         journalListStore.setValue([]);
         setIsDialogOpen(false);
-        window.playAudio("/click.mp3");
+        window.playAudio("click.mp3");
     }
 
     return <div class="JournalContainer">
         <h1>Személyes napló</h1>
-        {(openEntry == -1) ? <JournalList list={journalList} onAddNewEntry={(title: string) => {AddNewEntry(title); window.playAudio("/click.mp3")}} onClearList={() => {setIsDialogOpen(true); window.playAudio("/click.mp3")}} onOpenEntry={(index) => {setOpenEntry(index); window.playAudio("/click.mp3")}}></JournalList>
-        : <JournalTextInput index={openEntry} onSaveEntry={() => {setOpenEntry(-1); window.playAudio("/click.mp3")}}></JournalTextInput> }
-        {isDialogOpen ? <ConfirmDialog onDismiss={() => {setIsDialogOpen(false); window.playAudio("/click.mp3")}} onConfirm={OnClear}></ConfirmDialog> : null}
+        {(openEntry == -1) ? <JournalList list={journalList} onAddNewEntry={(title: string) => {AddNewEntry(title); window.playAudio("click.mp3")}} onClearList={() => {setIsDialogOpen(true); window.playAudio("/click.mp3")}} onOpenEntry={(index) => {setOpenEntry(index); window.playAudio("/click.mp3")}}></JournalList>
+        : <JournalTextInput index={openEntry} onSaveEntry={() => {setOpenEntry(-1); window.playAudio("click.mp3")}}></JournalTextInput> }
+        {isDialogOpen ? <ConfirmDialog onDismiss={() => {setIsDialogOpen(false); window.playAudio("click.mp3")}} onConfirm={OnClear}></ConfirmDialog> : null}
         
     </div>
 }

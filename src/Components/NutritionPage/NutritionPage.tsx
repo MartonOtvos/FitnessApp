@@ -13,18 +13,18 @@ export function NutritionPage()
 
     let AddNewEntry = (num: number) => {
         foodListStore.setValue([...foodList, {number: num, date: new Date()}]);
-        window.playAudio("/click.mp3");
+        window.playAudio("click.mp3");
     }
     let ClearList = () => {
         foodListStore.setValue([]);
         setIsDialogOpen(false);
-        window.playAudio("/click.mp3");
+        window.playAudio("click.mp3");
     }
     
     return <div class="container">
         <CalorieCounter></CalorieCounter>
         <h1>Rögzített étkezések</h1>
-        <CustomList list={foodList} onAddNewEntry={AddNewEntry} onClearList={() => {setIsDialogOpen(true); window.playAudio("/click.mp3")}} isWeight={false}></CustomList>
-        {isDialogOpen ? <ConfirmDialog onDismiss={() => {setIsDialogOpen(false); window.playAudio("/click.mp3")}} onConfirm={ClearList}></ConfirmDialog> : null}
+        <CustomList list={foodList} onAddNewEntry={AddNewEntry} onClearList={() => {setIsDialogOpen(true); window.playAudio("click.mp3")}} isWeight={false}></CustomList>
+        {isDialogOpen ? <ConfirmDialog onDismiss={() => {setIsDialogOpen(false); window.playAudio("click.mp3")}} onConfirm={ClearList}></ConfirmDialog> : null}
     </div>
 }

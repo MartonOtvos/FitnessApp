@@ -18,7 +18,7 @@ export function CalorieCounter()
         const value = inputRef.current ? parseInt(inputRef.current.value, 10) : 0;
         if(value <= 0) goalCalorieCountStore.setValue(1);
         else goalCalorieCountStore.setValue(value);
-        window.playAudio("/click.mp3");
+        window.playAudio("click.mp3");
     }
 
 

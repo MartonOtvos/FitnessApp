@@ -20,17 +20,17 @@ export function HomePage()
 
     let onAddNewEntry = (num: number) => {
         weightListStore.setValue([...weightList, {number: num, date: new Date()}]);
-        window.playAudio("/click.mp3");
+        window.playAudio("click.mp3");
     }
     let onClearList = () => {
         weightListStore.setValue([]);
-        window.playAudio("/click.mp3");
+        window.playAudio("click.mp3");
     }
 
     return <div class="HomePage">
         <CalorieCounter></CalorieCounter>
         <h1>Feljegyzett súlyok</h1>
-        <CustomList list={weightList} onAddNewEntry={onAddNewEntry} onClearList={() => {setIsDialogOpen(true); window.playAudio("/click.mp3")}} isWeight={true}></CustomList>
+        <CustomList list={weightList} onAddNewEntry={onAddNewEntry} onClearList={() => {setIsDialogOpen(true); window.playAudio("click.mp3")}} isWeight={true}></CustomList>
         {isDialogOpen ? <ConfirmDialog onDismiss={() => {setIsDialogOpen(false); window.playAudio("/click.mp3")}} onConfirm={onClearList}></ConfirmDialog> : null}
     </div>
 
