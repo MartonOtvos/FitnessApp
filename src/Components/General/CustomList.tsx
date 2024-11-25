@@ -9,7 +9,17 @@ export type customListProps = {
     isWeight: boolean;
 }
 
-
+/**
+* A módosítható lista újrahasználható komponens megvalósítása
+* 
+* @param list - A lista amelyet meg kell jeleníteni és műveleteket végezni rajta.
+* @param onAddNewEntry - Az új elem hozzáadásakor meghívandó callback fv.
+* @param onClearList - Az elemek törlésekor meghívandó callback fv.
+* @param isWeight - Egy boolean paraméter, csak azt mondja meg hogy kg, vagy kcal legyen a listában ábrázolva.
+* 
+* 
+* @returns Az elkészített HTML.
+*/
 export function CustomList({list, onAddNewEntry, onClearList, isWeight}: customListProps)
 {
     const inputRef = useRef<HTMLInputElement>(null);

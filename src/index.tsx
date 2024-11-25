@@ -7,11 +7,17 @@ import { useState } from 'preact/hooks';
 let audioContext;
 let audioBuffer;
 
+
+/**
+ * Lejátszik egy hangfájlt az Audio API használatával.
+ *
+ * @param path - A relatív elérési útja a lejátszandó hangfájlnak.
+ */
 async function playAudio(path: string) {
 	if(!audioContext){
 		audioContext = new (window.AudioContext)();
 	}
-
+	
 	const response = await fetch("/"+path);
 	const arrayBuffer = await response.arrayBuffer()
 	audioBuffer = await audioContext.decodeAudioData(arrayBuffer);
@@ -24,11 +30,12 @@ async function playAudio(path: string) {
 
 window.playAudio = playAudio;
 
-
+/**
+ * Az App "belépési pontja".
+ * 
+ * @returns Az elkészített HTML.
+ */
 export function App() {
-	
-
-	
 	return (
 		<Main></Main>
 	);

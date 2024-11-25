@@ -5,7 +5,12 @@ import { CalorieCounter } from "../General/CalorieCounter";
 import "./NutritionPage.less"
 import { ConfirmDialog } from "../General/ConfirmDialog";
 
-
+/**
+* Az ételfogyasztás oldal html-jét készíti el.
+* Itt lehet feljegyezni a napi ételfogyasztást.
+* 
+* @returns Az elkészített HTML.
+*/
 export function NutritionPage()
 {
     let foodList = useSyncExternalStore(foodListStore.subscribe, foodListStore.getValue);

@@ -6,6 +6,13 @@ type NavBarProps = {
     setCurrentPage: React.Dispatch<React.SetStateAction<page>>;
 };
 
+/**
+* Egy navigációs sáv, ami gombokat tartalmaz a navigáláshoz.
+* 
+* @param setCurrentPage - A navigálás esetén meghívandó callback fv.
+* 
+* @returns Az elkészített HTML.
+*/
 export function NavBar({ setCurrentPage }: NavBarProps)
 {
     

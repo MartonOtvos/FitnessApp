@@ -10,7 +10,18 @@ export type journalListProps = {
     onClearList: () => void;
 }
 
-
+/**
+* A napló bejegyzásek listáját megvalósító komponens.
+* Meg lehet nyitni rajta keresztül bejegyzéseket olvasásra és módosításra, újat lehet felvenni, és törölni mindet.
+* 
+* @param list - az átvett lista amit meg kell jeleníteni és módosításokat végezni rajta.
+* @param onAddNewEntry - Az új elem hozzáadásakor meghívandó callback fv.
+* @param onClearList - Az elemek törlésekor meghívandó callback fv.
+* @param onOpenEntry - Egy bejegyzés megnyitásakor meghívandó callback fv.
+* 
+* 
+* @returns Az elkészített HTML.
+*/
 export function JournalList({list, onAddNewEntry, onOpenEntry, onClearList}: journalListProps)
 {
     const inputRef = useRef<HTMLInputElement>(null);

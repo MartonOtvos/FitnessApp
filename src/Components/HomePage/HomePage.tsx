@@ -12,7 +12,12 @@ export type numberEntry = {
     date: Date;
 }
 
-
+/**
+* A Home oldal html-jét készíti el.
+* Itt lehet feljegyezni a napi súlyokat.
+* 
+* @returns Az elkészített HTML.
+*/
 export function HomePage()
 {
     let weightList = useSyncExternalStore(weightListStore.subscribe, weightListStore.getValue);

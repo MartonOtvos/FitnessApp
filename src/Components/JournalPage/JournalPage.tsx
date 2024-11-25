@@ -12,6 +12,12 @@ export type JournalEntry = {
     date: Date;
 }
 
+/**
+* A napló oldal html-jét készíti el.
+* Itt lehet feljegyezni a személyes gondolatokat, egyéb szöveges adatokat.
+* 
+* @returns Az elkészített HTML.
+*/
 export function JournalPage()
 {
     let journalList = useSyncExternalStore(journalListStore.subscribe, journalListStore.getValue);

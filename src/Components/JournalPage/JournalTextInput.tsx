@@ -9,7 +9,14 @@ export type journalTextInputProps = {
     onSaveEntry: () => void;
 }
 
-
+/**
+* Egy saját textInput megvalósítás a naplóbejegyzések szerkesztésére.
+* 
+* @param index - a megnyitott naplóbejegyzés indexe.
+* @param onSaveEntry - A bejegyzés mentésekor meghívando callback fv.
+* 
+* @returns Az elkészített HTML.
+*/
 export function JournalTextInput({index, onSaveEntry}: journalTextInputProps)
 {
     let journalEntry = journalListStore.getValue()[index];

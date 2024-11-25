@@ -6,7 +6,14 @@ export type ConfirmDialogProps= {
     onDismiss: () => void;
 }
 
-
+/**
+* Egy saját dialógus ablak megvalósítás.
+* 
+* @param onComfirm - az elfogadás eseményre átadott callback fv.
+* @param onDismiss - az elutasítás eseményre átadott callback fv.
+* 
+* @returns Az elkészített HTML.
+*/
 export function ConfirmDialog( { onConfirm, onDismiss } : ConfirmDialogProps )
 {
 

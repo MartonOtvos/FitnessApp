@@ -6,7 +6,12 @@ import "./WorkoutPage.less"
 import { ConfirmDialog } from "../General/ConfirmDialog";
 
 
-
+/**
+* Az edzés oldal html-jét készíti el.
+* Itt lehet feljegyezni a napi edzéseket, és égetett kalóriákat.
+* 
+* @returns Az elkészített HTML.
+*/
 export function WorkoutPage()
 {
     let workoutList = useSyncExternalStore(workoutListStore.subscribe, workoutListStore.getValue);

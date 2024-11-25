@@ -8,12 +8,17 @@ import { NutritionPage } from "../NutritionPage/NutritionPage";
 import { WorkoutPage } from "../WorkoutPage/WorkoutPage";
 import { JournalEntry, JournalPage } from "../JournalPage/JournalPage";
 
+/**
+* Enum a navigációs oldalak azonosításához.
+*
+*/
 export enum page{
     Home,
     Nutrition,
     Workout,
     Journal
 }
+
 
 export const calorieCountStore = new GlobalStore(0);
 export const goalCalorieCountStore = new GlobalStore(2000);
@@ -24,7 +29,11 @@ export const journalListStore = new GlobalStore<JournalEntry[]>([]);
 
 
 
-
+/**
+     * A fő befoglaló HTML megalkotó fv-e.
+     *
+     * @returns Az elkészített HTML.
+     */
 export function Main()
 {
     let [currentPage, setCurrentPage] = useState(page.Home);
@@ -35,7 +44,10 @@ export function Main()
     let weightList = useSyncExternalStore(weightListStore.subscribe, weightListStore.getValue);
     let journalList = useSyncExternalStore(journalListStore.subscribe, journalListStore.getValue);
 
-
+    /**
+    * Egyszer lefutó effect, ami az oldal betöltödésekor, beállítja a local storage-ben tárolt adatokból a memóriában tárolt adatokat.
+    *
+    */
     useEffect(() => {
         const foodListFromStorage = JSON.parse(localStorage.getItem("foodList") || '[]');
         const workoutListFromStorage = JSON.parse(localStorage.getItem("workoutList") || '[]');
@@ -66,7 +78,10 @@ export function Main()
         goalCalorieCountStore.setValue(goalCalorieCountFromStorage);
     }, []);
 
-
+    /**
+    * Effect, ami kiszámolja és frissíti a globális tárolók értékeit, majd tárolja őket local storage-ben.
+    * Minden foodList és workoutList módosításra meghívódik.
+    */
     useEffect(() => {
         let foodsum = 0;
         foodList.forEach(element => {
@@ -89,6 +104,10 @@ export function Main()
 
     }, [foodList, workoutList]);
 
+    /**
+    * Effect, ami kiszámolja és frissíti a globális tárolók értékeit, majd tárolja őket local storage-ben.
+    * Minden weightList, goalCalorieCount és joutnalList módosításra meghívódik.
+    */
     useEffect(() => {
         let weightListString = JSON.stringify(weightList);
         let goalCalorieCountString = JSON.stringify(goalCalorieCount);
@@ -99,7 +118,9 @@ export function Main()
         localStorage.setItem('journalList', journalListString);
     }, [weightList, goalCalorieCount, journalList])
 
-
+    /**
+    * Visszaadja az elkészített HTML-t a navigációs állapottól függően.
+    */
     return <div class="Main">
         <NavBar setCurrentPage={setCurrentPage}></NavBar>
         {currentPage === page.Home && <HomePage />}

@@ -6,7 +6,16 @@ export type ProgressBarProps = {
 }
 
 
-
+/**
+* Egy saját progressBar megvalósítás div-eket és css-t használva.
+* 
+* @param progress - a jelenlegi érték.
+* @param maximum - a maximum érték.
+* 
+* A paraméterek alapján számítja ki a progress div szélességét.
+* 
+* @returns Az elkészített HTML.
+*/
 export function ProgressBar({progress, maximum}: ProgressBarProps)
 {
     let percentage = (progress/maximum) * 100;

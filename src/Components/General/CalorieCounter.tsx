@@ -3,7 +3,12 @@ import { ProgressBar } from "./ProgressBar";
 import { calorieCountStore, goalCalorieCountStore } from "./Main";
 import "./CalorieCounter.less"
 
-
+/**
+* A kalóriaszámláló újrahasználható HTML generáló függvénye.
+* A kalóriaszámlálón lehet beállítani a napi célkalória fogyasztást.
+* 
+* @returns Az elkészített HTML.
+*/
 export function CalorieCounter()
 {
     let calorieCount = useSyncExternalStore(calorieCountStore.subscribe, calorieCountStore.getValue);
