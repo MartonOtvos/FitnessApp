@@ -18,7 +18,7 @@ async function playAudio(path: string) {
 		audioContext = new (window.AudioContext)();
 	}
 	
-	const response = await fetch("/"+path);
+	const response = await fetch("./"+path);
 	const arrayBuffer = await response.arrayBuffer()
 	audioBuffer = await audioContext.decodeAudioData(arrayBuffer);
 
